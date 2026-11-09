@@ -46,3 +46,11 @@ def make_wheel(max_val):#Function that creates one wheel. max_val = 23 for hours
 h_box = make_wheel(23)
 m_box = make_wheel(59)
 s_box = make_wheel(59)
+
+#assign defult time
+h_box.delete(0, "end")
+h_box.insert(0, "00")   # default hours
+m_box.delete(0, "end")
+m_box.insert(0, "00")   # default minutes (hal. 00:01:00)
+s_box.delete(0, "end") #delete inside in second box
+s_box.insert(0,"01") # default 00:00:01
