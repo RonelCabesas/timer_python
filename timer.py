@@ -20,3 +20,10 @@ except:
             time.sleep(0.5)
             # for mac/linux beep
             root.bell()
+# --- create main layout ---
+root = tk.Tk()
+root.title("Timer")
+root.geometry("360x520")
+root.config(bg="#f2f2f2")
+
+tk.Label(root, text="Timer", font=("Arial", 22, "bold"), bg="#f2f2f2").pack(anchor="w", padx=20, pady=20)
