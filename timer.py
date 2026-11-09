@@ -66,3 +66,19 @@ def update_display(t):
     mm = (t % 3600) // 60
     ss = t % 60
     display.config(text=f"{hh:02d}:{mm:02d}:{ss:02d}") #display the upgraded label on screen
+def countdown(total): #total second like 70 second, it will be 1minutes and 10 second
+    global is_running, stop_timer, stop_alarm 
+    t = total # the total time will be minus 1 second for the countdown
+    while t >= 0:#loop , while there's a time
+        if stop_timer:#when you click stop and it will become true, the loop exit and the countdown will cancelled
+            return 
+        root.after(0, update_display, t) #update the display if there's a time left 
+        if t == 0:#if false you will go the time.sleep, then you can still click the stop button
+            break #if true, break no need to go in time.sleep
+        time.sleep(1)#continue to countdown the time left
+        t -= 1
+    #if we don't click the stop button and the countdown ends 
+    if not stop_timer:
+        root.after(0, lambda: display.config(text="TIME'S UP!"))
+        ring()
+  
