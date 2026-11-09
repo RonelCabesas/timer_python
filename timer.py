@@ -118,4 +118,10 @@ def start_stop():
         display.pack_forget()#hide the countdown
         picker.pack(pady=20)#display the 3 wheel
         btn.config(text="▶ START")#change the button from  stop to start
+# the button 
+btn = tk.Button(root, text="▶ START", font=("Arial", 16, "bold"), bg="white", fg="#2196F3",
+                width=14, height=2, bd=0, relief="flat", command=start_stop,
+                activebackground="white")
+btn.pack(side="bottom", pady=40)
 
+root.mainloop() #Keeps the window open and alive.
