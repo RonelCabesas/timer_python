@@ -81,4 +81,20 @@ def countdown(total): #total second like 70 second, it will be 1minutes and 10 s
     if not stop_timer:
         root.after(0, lambda: display.config(text="TIME'S UP!"))
         ring()
-  
+def start_stop():
+    global is_running, stop_timer, stop_alarm, timer_thread #used the switches outside
+
+    if not is_running:
+        # --- START ---
+        #check if the timer is not yet running
+        #read the 3 wheels, If reading fails → exit, don't start.
+        try:
+            H = int(h_box.get())
+            M = int(m_box.get())
+            S = int(s_box.get())
+        except:
+            return
+        #Converts HH:MM:SS to total seconds → If total is 0 → exit, don't start.
+        total = H*3600 + M*60 + S
+        if total <= 0:
+            return
