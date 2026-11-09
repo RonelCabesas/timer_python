@@ -98,3 +98,14 @@ def start_stop():
         total = H*3600 + M*60 + S
         if total <= 0:
             return
+    is_running = True #the code knows that the button is now on stop mood
+        stop_timer = False #continue to countdown
+        stop_alarm = False #the alarm is ready but not functioning
+
+        picker.pack_forget() # hide the 3wheel
+        display.pack(pady=80) # show the countdown label
+
+        btn.config(text="■ STOP") #switch the button from start to stop
+        # countdown is the only work then submit the total second for the countdown
+        timer_thread = threading.Thread(target=countdown, args=(total,), daemon=True)
+        timer_thread.start() # the timer will start to countdown
