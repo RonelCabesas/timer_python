@@ -42,4 +42,7 @@ def make_wheel(max_val):#Function that creates one wheel. max_val = 23 for hours
     sb.pack()#Show the spinbox inside its frame. #-- separator line. --#
     tk.Label(f, text="", font=("Arial", 20), bg="#f2f2f2").pack() if max_val==23 or max_val==59 else None
     return sb
-
+#create a value inside the box wheel
+h_box = make_wheel(23)
+m_box = make_wheel(59)
+s_box = make_wheel(59)
