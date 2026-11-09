@@ -54,3 +54,15 @@ m_box.delete(0, "end")
 m_box.insert(0, "00")   # default minutes (hal. 00:01:00)
 s_box.delete(0, "end") #delete inside in second box
 s_box.insert(0,"01") # default 00:00:01
+
+display = tk.Label(root, text="00:00:01", font=("Arial", 55, "bold"), bg="#f2f2f2") # the output when i click start
+
+is_running = False #if false the button is start, but when it s true the button is stop
+timer_thread = None # the one who count the ramaining time
+stop_timer = False #second button, if false the countdown will continue, if true the countdown stop
+
+def update_display(t):
+    hh = t // 3600
+    mm = (t % 3600) // 60
+    ss = t % 60
+    display.config(text=f"{hh:02d}:{mm:02d}:{ss:02d}") #display the upgraded label on screen
