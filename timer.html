@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Timer</title>
+<style>
+body{margin:0; background:#f2f2f2; font-family:Arial; display:flex; flex-direction:column; height:100vh;}
+.title{font-size:20px; padding:25px;}
+.picker{display:flex; justify-content:center; align-items:center; gap:10px; margin-top:40px;}
+.col{width:80px; height:220px; overflow-y:scroll; scroll-snap-type:y mandatory; text-align:center;}
+.col::-webkit-scrollbar{display:none;}
+.col span{display:block; font-size:40px; padding:12px 0; color:#bbb; scroll-snap-align:center;}
+.col span.active{color:#000; font-weight:bold;}
+.line{width:1px; height:200px; background:#ddd;}
+.display{font-size:65px; text-align:center; margin-top:100px; display:none;}
+.btn{width:150px; height:60px; background:white; border:0; border-radius:30px; margin:auto; font-size:26px; color:#2196F3; box-shadow:0 4px 12px rgba(0,0,0,.15); cursor:pointer;}
+</style>
+</head>
+<body>
